@@ -1,0 +1,20 @@
+-- the values REPLACE_WITH_USER and REPLACE_WITH_PASSWORD must to be replaced for correct user and password
+-- create user
+CREATE USER IF NOT EXISTS REPLACE_WITH_USER@localhost IDENTIFIED BY 'REPLACE_WITH_PASSWORD';
+
+-- create database
+CREATE SCHEMA IF NOT EXISTS greetings_db;
+
+-- set privileges
+GRANT ALL ON greetings_db.* TO 'REPLACE_WITH_USER'@'localhost' WITH GRANT OPTION;
+GRANT ALL ON greetings_db.* TO 'REPLACE_WITH_USER'@'%' WITH GRANT OPTION;
+
+-- create database
+CREATE SCHEMA IF NOT EXISTS greetings_dev_db;
+
+-- set privileges
+GRANT ALL ON greetings_dev_db.* TO 'REPLACE_WITH_USER'@'localhost' WITH GRANT OPTION;
+GRANT ALL ON greetings_dev_db.* TO 'REPLACE_WITH_USER'@'%' WITH GRANT OPTION;
+
+-- saving privileges
+FLUSH PRIVILEGES;

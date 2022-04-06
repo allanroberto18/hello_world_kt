@@ -1,0 +1,21 @@
+version: '3.1'
+services:
+  db:
+    container_name: ${APP_NAME}_db
+    image: mariadb
+    ports:
+      - 3306:3306
+    env_file:
+      - .env
+    environment:
+      MARIADB_USER: ${DB_USER}
+      MARIADB_PASSWORD: ${DB_PASSWORD}
+      MARIADB_ROOT_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - "./scripts/schema.sql:/docker-entrypoint-initdb.d/1.sql"
+
+  adminer:
+    container_name: ${APP_NAME}_adminer
+    image: adminer
+    ports:
+      - 9080:8080
