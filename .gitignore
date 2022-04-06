@@ -37,5 +37,4 @@ build/
 .env.dev
 
 /lib/
-!/lib/
 
