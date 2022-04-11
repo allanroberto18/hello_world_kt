@@ -19,3 +19,9 @@ services:
     image: adminer
     ports:
       - 9080:8080
+
+  cache:
+    container_name: ${APP_NAME}_cache
+    image: redis
+    ports:
+      - 6379:6379

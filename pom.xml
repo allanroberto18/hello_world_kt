@@ -19,23 +19,42 @@
         <mariadb-client.version>3.0.3</mariadb-client.version>
         <flyway-core.version>7.5.1</flyway-core.version>
         <openapi-ui.version>1.6.6</openapi-ui.version>
+        <spring-data-redis.version>2.5.12</spring-data-redis.version>
+        <lettuce-core.version>6.1.8.RELEASE</lettuce-core.version>
+        <logback-classic.version>1.2.3</logback-classic.version>
+        <slf4j-api.version>1.7.30</slf4j-api.version>
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!-- Spring Data -->
+        <!-- Spring Data: mariadb -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.mariadb.jdbc</groupId>
             <artifactId>mariadb-java-client</artifactId>
             <version>${mariadb-client.version}</version>
         </dependency>
-        <!-- Spring Data -->
+        <!-- Spring Data: mariadb -->
+
+        <!-- Spring Data: redis -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <version>${spring-data-redis.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.lettuce</groupId>
+            <artifactId>lettuce-core</artifactId>
+            <version>${lettuce-core.version}</version>
+        </dependency>
+        <!-- Spring Data: redis -->
 
         <!-- Flyway -->
         <dependency>
@@ -58,6 +77,26 @@
             <version>${openapi-ui.version}</version>
         </dependency>
         <!-- openapi-ui -->
+
+        <!-- Logs -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j-api.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback-classic.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>${logback-classic.version}</version>
+        </dependency>
+        <!-- Logs -->
 
         <dependency>
             <groupId>com.fasterxml.jackson.module</groupId>
