@@ -7,4 +7,7 @@
 ```
 docker-compose up
 ```
-
+4. Check the endpoints available after run the application at 
+``` 
+http://${YOUR_HOST}:${YOUR_PORT}/
+```
